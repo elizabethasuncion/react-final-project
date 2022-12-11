@@ -1,5 +1,10 @@
-$color: steelblue;
+$primary: #1B7685;
+$body-bg: #fefefe;
 
-.my-books {
-  color: $color;
-}
+@import '~bootstrap/scss/bootstrap.scss';
+
+// $color: steelblue;
+
+// .my-books {
+//   color: $color;
+// }

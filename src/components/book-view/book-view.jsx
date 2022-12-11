@@ -1,8 +1,10 @@
-export const BookView = ({ book }) => {
+import './book-view.scss';
+
+export const BookView = ({ book, onBackClick }) => {
   return (
     <div>
       <div>
-        <img src={book.image} />
+        <img className="w-100" src={book.image} />
       </div>
       <div>
         <span>Title: </span>
@@ -16,7 +18,14 @@ export const BookView = ({ book }) => {
         <span>Summary: </span>
         <span>{book.summary}</span>
       </div>
-      <button onClick={onBackClick}>Back</button>
+
+      <button
+        onClick={onBackClick}
+        className="back-button"
+        style={{ cursor: "pointer" }}
+      >
+        Back
+      </button>
     </div>
   );
 };
