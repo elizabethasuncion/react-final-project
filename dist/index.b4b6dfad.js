@@ -2902,9 +2902,9 @@ try {
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
 var _indexScss = require("./index.scss");
-const MyFlixApplication = ()=>{
+const MyBooksApplication = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "my-flix",
+        className: "my-books",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: "Good morning"
         }, void 0, false, {
@@ -2918,16 +2918,16 @@ const MyFlixApplication = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_c = MyFlixApplication;
+_c = MyBooksApplication;
 const container = document.querySelector("#root");
 const root = (0, _client.createRoot)(container);
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MyFlixApplication, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MyBooksApplication, {}, void 0, false, {
     fileName: "src/index.jsx",
     lineNumber: 13,
     columnNumber: 13
 }, undefined));
 var _c;
-$RefreshReg$(_c, "MyFlixApplication");
+$RefreshReg$(_c, "MyBooksApplication");
 
   $parcel$ReactRefreshHelpers$98a3.postlude(module);
 } finally {
