@@ -12,7 +12,20 @@ export const BookView = ({ book }) => {
         <span>Author: </span>
         <span>{book.author}</span>
       </div>
-      <button>Back</button>
+      <div>
+        <span>Summary: </span>
+        <span>{book.summary}</span>
+      </div>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
+};
+
+BookView.propTypes = {
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired
+  }).isRequired,
+  onBackClick: PropTypes.func.isRequired
 };
