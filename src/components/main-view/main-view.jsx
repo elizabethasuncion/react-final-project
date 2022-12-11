@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BookCard } from "../book-card/book-card";
 import { BookView } from "../book-view/book-view";
+import { LoginView } from "../login-view/login-view";
 
 export const MainView = () => {
+
+  const [user, setUser] = useState(null);
+
+  if (!user) {
+    return <LoginView />;
+  }
+
   const [books, setBooks] = useState([
     {
       id: 1,
