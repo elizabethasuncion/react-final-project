@@ -5,10 +5,139 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
+  const [books, setBooks] = useState([]);
+  // const [selectedBook, setSelectedBook] = useState(null);
+  const [user, setUser] = useState(null);
 
-  // const [books, setBooks] = useState([
+  useEffect(() => {
+    fetch("https://openlibrary.org/search.json?q=star+wars")
+      .then((response) => response.json())
+      .then((data) => {
+        const booksFromApi = data.docs.map((doc) => {
+          return {
+            id: doc.key,
+            title: doc.title,
+            image: `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`,
+            author: doc.author_name?.[0]
+          };
+        });
+
+        setBooks(booksFromApi);
+      });
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <Row className="justify-content-md-center">
+        <Routes>
+          <Route
+            path="/signup"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Col md={5}>
+                    <SignupView />
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Col md={5}>
+                    <LoginView onLoggedIn={(user) => setUser(user)} />
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/books/:bookId"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : books.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <Col md={8}>
+                    <BookView books={books} />
+                  </Col>
+                )}
+              </>
+            }
+          />
+
+          <Route
+            path="/"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : books.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <>
+                    {books.map((book) => (
+                      <Col className="mb-4" key={book.id} md={3}>
+                        <BookCard book={book} />
+                      </Col>
+                    ))}
+                  </>
+                )}
+              </>
+            }
+          />
+        </Routes>
+      </Row>
+    </BrowserRouter>
+  );
+};
+
+ // if (!user) {
+  //   return (
+  //     <>
+  //       <LoginView onLoggedIn={(user) => setUser(user)} />
+  //       or
+  //       <SignupView />
+  //     </>
+  //   );
+  // }
+
+  //   if (selectedBook) {
+  //     return <BookView book={selectedBook} onBackClick={() => setSelectedBook(null)} />;
+  //   }
+
+  //   if (books.length === 0) {
+  //     return <div>The list is empty!</div>;
+  //   }
+
+  //   return (
+  //     <div>
+  //       {books.map((book) => (
+  //         <BookCard
+  //           key={book.id}
+  //           book={book}
+  //           onBookClick={(newSelectedBook) => {
+  //             setSelectedBook(newSelectedBook);
+  //           }}
+  //         />
+  //       ))}
+  //     </div>
+  //   );
+  // }
+
+   // const [books, setBooks] = useState([
   //   {
   //     id: 1,
   //     title: "Trespasses",
@@ -55,91 +184,36 @@ export const MainView = () => {
 
   // const [selectedBook, setSelectedBook] = useState(null);
 
-  const [books, setBooks] = useState([]);
-  const [selectedBook, setSelectedBook] = useState(null);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    fetch("https://openlibrary.org/search.json?q=star+wars")
-      .then((response) => response.json())
-      .then((data) => {
-        const booksFromApi = data.docs.map((doc) => {
-          return {
-            id: doc.key,
-            title: doc.title,
-            image: `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`,
-            author: doc.author_name?.[0]
-          };
-        });
-
-        setBooks(booksFromApi);
-      });
-  }, []);
-
-  // if (!user) {
-  //   return (
-  //     <>
-  //       <LoginView onLoggedIn={(user) => setUser(user)} />
-  //       or
-  //       <SignupView />
-  //     </>
-  //   );
-  // }
-
-  //   if (selectedBook) {
-  //     return <BookView book={selectedBook} onBackClick={() => setSelectedBook(null)} />;
-  //   }
-
-  //   if (books.length === 0) {
-  //     return <div>The list is empty!</div>;
-  //   }
-
-  //   return (
-  //     <div>
-  //       {books.map((book) => (
-  //         <BookCard
-  //           key={book.id}
-  //           book={book}
-  //           onBookClick={(newSelectedBook) => {
-  //             setSelectedBook(newSelectedBook);
-  //           }}
+  // return (
+  //   <Row className="justify-content-md-center">
+  //     {!user ? (
+  //       <Col md={5}>
+  //         <LoginView onLoggedIn={(user) => setUser(user)} />
+  //         or
+  //         <SignupView />
+  //       </Col>
+  //     ) : selectedBook ? (
+  //       <Col md={8}>
+  //         <BookView
+  //           book={selectedBook}
+  //           onBackClick={() => setSelectedBook(null)}
   //         />
-  //       ))}
-  //     </div>
-  //   );
-  // }
-
-  return (
-    <Row className="justify-content-md-center">
-      {!user ? (
-        <Col md={5}>
-          <LoginView onLoggedIn={(user) => setUser(user)} />
-          or
-          <SignupView />
-        </Col>
-      ) : selectedBook ? (
-        <Col md={8}>
-          <BookView
-            book={selectedBook}
-            onBackClick={() => setSelectedBook(null)}
-          />
-        </Col>
-      ) : books.length === 0 ? (
-        <div>The list is empty!</div>
-      ) : (
-        <>
-          {books.map((book) => (
-            <Col className="mb-4" key={book.id} md={3}>
-              <BookCard
-                book={book}
-                onBookClick={(newSelectedBook) => {
-                  setSelectedBook(newSelectedBook);
-                }}
-              />
-            </Col>
-          ))}
-        </>
-      )}
-    </Row>
-  );
-};
+  //       </Col>
+  //     ) : books.length === 0 ? (
+  //       <div>The list is empty!</div>
+  //     ) : (
+  //       <>
+  //         {books.map((book) => (
+  //           <Col className="mb-4" key={book.id} md={3}>
+  //             <BookCard
+  //               book={book}
+  //               onBookClick={(newSelectedBook) => {
+  //                 setSelectedBook(newSelectedBook);
+  //               }}
+  //             />
+  //           </Col>
+  //         ))}
+  //       </>
+  //     )}
+  //   </Row>
+  // );

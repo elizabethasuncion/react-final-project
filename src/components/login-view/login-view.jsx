@@ -1,20 +1,4 @@
-// export const LoginView = () => {
-//   return (
-//     <form>
-//       <label>
-//         Username:
-//         <input type="text" />
-//       </label>
-//       <label>
-//         Password:
-//         <input type="password" />
-//       </label>
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// };
-
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -70,3 +54,19 @@ export const LoginView = ({ onLoggedIn }) => {
     </Form>
   );
 };
+
+// export const LoginView = () => {
+//   return (
+//     <form>
+//       <label>
+//         Username:
+//         <input type="text" />
+//       </label>
+//       <label>
+//         Password:
+//         <input type="password" />
+//       </label>
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// };

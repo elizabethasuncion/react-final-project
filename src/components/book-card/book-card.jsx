@@ -1,5 +1,7 @@
+import React from "react";
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const BookCard = ({ book, onBookClick }) => {
   return (
@@ -20,7 +22,8 @@ BookCard.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    author: PropTypes.string
+    author: PropTypes.string,
+    summary: PropTypes.string.isRequired
   }).isRequired,
   onBookClick: PropTypes.func.isRequired
 };
