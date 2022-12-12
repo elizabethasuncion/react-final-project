@@ -17,6 +17,7 @@
   "homepage": "https://github.com/elizabethasuncion/react-final-project#readme",
   "dependencies": {
     "bootstrap": "5.2.0",
+    "parcel": "^2.8.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "2.5.0",
