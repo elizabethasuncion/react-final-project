@@ -17,5 +17,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.8.1"
+  }
 }
