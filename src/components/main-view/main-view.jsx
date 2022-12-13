@@ -14,7 +14,7 @@ export const MainView = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("https://openlibrary.org/search.json?q=star+wars")
+    fetch("https://openlibrary.org/search.json?q=romance")
       .then((response) => response.json())
       .then((data) => {
         const booksFromApi = data.docs.map((doc) => {
