@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import './book-view.scss';
+import "./book-view.scss";
 
-export const BookView = ({ book, onBackClick }) => {
+export const BookView = ({ books }) => {
   const { bookId } = useParams();
 
   const book = books.find((b) => b.id === bookId);
@@ -20,32 +20,9 @@ export const BookView = ({ book, onBackClick }) => {
         <span>Author: </span>
         <span>{book.author}</span>
       </div>
-      <div>
-        <span>Summary: </span>
-        <span>{book.summary}</span>
-      </div>
-
       <Link to={`/`}>
         <button className="back-button">Back</button>
       </Link>
-
     </div>
   );
-};
-// <button
-//   onClick={onBackClick}
-//   className="back-button"
-//   style={{ cursor: "pointer" }}
-// >
-//   Back
-// </button> 
-
-BookView.propTypes = {
-  book: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    summary: PropTypes.string.isRequired
-  }).isRequired,
-  onBackClick: PropTypes.func.isRequired
 };

@@ -1,33 +1,21 @@
 {
-  "name": "react-final-project",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elizabethasuncion/react-final-project.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/elizabethasuncion/react-final-project/issues"
-  },
-  "homepage": "https://github.com/elizabethasuncion/react-final-project#readme",
+  "name": "36-books-demo-navigation-component-and-routing",
   "dependencies": {
     "bootstrap": "5.2.0",
-    "parcel": "^2.8.1",
-    "prop-types": "^15.8.1",
+    "prop-types": "15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "2.5.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.5",
+    "react-router": "6.3.0",
+    "react-router-dom": "6.3.0",
     "react-scripts": "4.0.0"
   },
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.1",
-    "process": "^0.11.10"
+  "keywords": [],
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": []
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

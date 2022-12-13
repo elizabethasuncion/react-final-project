@@ -36,7 +36,7 @@ export const SignupView = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="signUpFormUsername">
+      <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
           type="text"
@@ -47,7 +47,7 @@ export const SignupView = () => {
         />
       </Form.Group>
 
-      <Form.Group controlId="signUpFormPassword">
+      <Form.Group controlId="formPassword">
         <Form.Label>Password:</Form.Label>
         <Form.Control
           type="password"
@@ -56,7 +56,8 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-      <Form.Group controlId="signUpFormEmail">
+
+      <Form.Group controlId="formEmail">
         <Form.Label>Email:</Form.Label>
         <Form.Control
           type="email"
@@ -65,8 +66,9 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-      <Form.Group controlId="signUpFormBirthday">
-        <Form.Label>Date of Birth:</Form.Label>
+
+      <Form.Group controlId="formBirthday">
+        <Form.Label>Birthday:</Form.Label>
         <Form.Control
           type="date"
           value={birthday}
@@ -74,6 +76,7 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
+
       <Button variant="primary" type="submit">
         Submit
       </Button>
