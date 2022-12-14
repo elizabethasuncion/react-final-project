@@ -1,5 +1,17 @@
 {
-  "name": "36-books-demo-navigation-component-and-routing",
+  "name": "myBooks React Project",
+  "version": "1.0.0",
+  "description": "React Final Project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elizabethasuncion/react-final-project.git"
+  },
+  "author": "EJASUNCION",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elizabethasuncion/react-final-project/issues"
+  },
+  "homepage": "https://github.com/elizabethasuncion/react-final-project#readme",
   "dependencies": {
     "bootstrap": "5.2.0",
     "prop-types": "15.8.1",
@@ -10,15 +22,11 @@
     "react-router-dom": "6.3.0",
     "react-scripts": "4.0.0"
   },
-  "keywords": [],
-  "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.1",
     "parcel": "^2.8.1"
   }
 }
