@@ -27325,19 +27325,26 @@ const BookCard = ({ book  })=>{
                         lineNumber: 12,
                         columnNumber: 9
                     }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
+                        children: '"Lorem ipsum dolor sit amet, conent, sunt in culid est laborum."'
+                    }, void 0, false, {
+                        fileName: "src/components/book-card/book-card.jsx",
+                        lineNumber: 13,
+                        columnNumber: 9
+                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: `/books/${encodeURIComponent(book.id)}`,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                             variant: "link",
-                            children: "Open"
+                            children: "Details"
                         }, void 0, false, {
                             fileName: "src/components/book-card/book-card.jsx",
-                            lineNumber: 14,
+                            lineNumber: 15,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/book-card/book-card.jsx",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -43104,6 +43111,28 @@ const BookView = ({ books  })=>{
                 lineNumber: 19,
                 columnNumber: 7
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Details: "
+                    }, void 0, false, {
+                        fileName: "src/components/book-view/book-view.jsx",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                    }, void 0, false, {
+                        fileName: "src/components/book-view/book-view.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/book-view/book-view.jsx",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: `/`,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -43111,12 +43140,12 @@ const BookView = ({ books  })=>{
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/book-view/book-view.jsx",
-                    lineNumber: 24,
+                    lineNumber: 28,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/book-view/book-view.jsx",
-                lineNumber: 23,
+                lineNumber: 27,
                 columnNumber: 7
             }, undefined)
         ]
@@ -43233,13 +43262,29 @@ const LoginView = ({ onLoggedIn  })=>{
                 lineNumber: 43,
                 columnNumber: 7
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                className: "mb-3",
+                controlId: "formBasicCheckbox",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Check, {
+                    type: "checkbox",
+                    label: "Remember Me"
+                }, void 0, false, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 54,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 53,
+                columnNumber: 7
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 variant: "primary",
                 type: "submit",
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 52,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined)
         ]

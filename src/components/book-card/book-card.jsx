@@ -10,8 +10,9 @@ export const BookCard = ({ book }) => {
       <Card.Body>
         <Card.Title>{book.title}</Card.Title>
         <Card.Text>{book.author}</Card.Text>
+        <Card.Text>"Lorem ipsum dolor sit amet, conent, sunt in culid est laborum."</Card.Text>
         <Link to={`/books/${encodeURIComponent(book.id)}`}>
-          <Button variant="link">Open</Button>
+          <Button variant="link">Details</Button>
         </Link>
       </Card.Body>
     </Card>
