@@ -16,10 +16,11 @@ The main view of this project is a “home” page, where, after completing Logi
 - data fetching: Open Library API
 - routing: React Router
 - UI Framework: React Bootstrap
-- Build Tool: Parcel
+- build tool: Parcel
 
 
 ## Hosting on Netifly
+
 https://eja-react-project.netlify.app
 
 username: 5MXD1sEK00v1frQX
