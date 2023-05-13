@@ -19,7 +19,7 @@ The main view of this project is a “home” page, where, after completing Logi
 - build tool: Parcel
 
 
-## Hosting on Netifly
+## Hosting on Netlify
 
 https://eja-react-project.netlify.app
 
